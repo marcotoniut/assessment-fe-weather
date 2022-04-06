@@ -2,7 +2,7 @@
 
 ## Objective
 
-Using the API provided to along with this test by the recruiter, use the OpenWeatherAPI [https://openweathermap.org/api](https://openweathermap.org/api) to create a web app that allows a user to **input a location, such as 'London', and retrieve the current weather for that location**
+Using the API Key, provided along with this test by the recruiter, use the OpenWeatherAPI [https://openweathermap.org/api](https://openweathermap.org/api) to create a web app that allows a user to **input a location, such as 'London', and retrieve the current weather for that location**
 
 _To do this you will need to make use of more than one endpoint_
 
