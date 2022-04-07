@@ -30,6 +30,11 @@
       "react-app/jest"
     ]
   },
+  "resolutions": {
+    "nth-check": "^2.0.1",
+    "glob-parent": "^5.1.2",
+    "trim": "^0.0.3"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.0",
