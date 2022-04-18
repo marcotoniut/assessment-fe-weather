@@ -1,14 +1,33 @@
+import * as DIO from 'io-ts/Decoder';
+import { BrowserRouter } from 'react-router-dom';
+import { makeOpenWeatherApi } from 'openWeather';
+import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import env from 'react-dotenv';
+import reportWebVitals from './reportWebVitals';
 
 import './index.scss';
 
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+const DIO_env = DIO.struct({
+  OPENWEATHER_API_KEY: DIO.string,
+});
+
+const envE = DIO_env.decode(env);
+if (envE._tag === 'Left') {
+  throw new Error('Env is not defined');
+}
+const { OPENWEATHER_API_KEY } = envE.right;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App
+        openWeatherApi={makeOpenWeatherApi({
+          appid: OPENWEATHER_API_KEY,
+        })}
+      />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 );
